@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import data from "./api/Data"; // Ruta correcta al archivo data
 
 const DropdownCategorias = ({ menuActive }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -8,11 +9,8 @@ const DropdownCategorias = ({ menuActive }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("../db.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setCategories(data.categorias);
-      });
+    // Aquí ya no necesitas la llamada fetch() porque tienes los datos directamente en 'data'
+    setCategories(data.categorias);
   }, []);
 
   const activeDropdown = () => {
@@ -29,23 +27,22 @@ const DropdownCategorias = ({ menuActive }) => {
       </button>
 
       <div
-        className={`absolute z-50 flex flex-col  p-1 mt-8 text-lg font-normal text-center transition-all bg-red-500 rounded-md  w-32  ${
+        className={`absolute z-50 flex flex-col p-1 mt-8 text-lg font-normal text-center transition-all bg-red-500 rounded-md w-32 ${
           showDropdown ? "" : "hidden"
         }`}
       >
-        {categories.map((categorias) => {
+        {categories.map((categoria) => {
           return (
             <Link
-              key={categorias.id}
+              key={categoria.id}
               onClick={() => {
                 activeDropdown();
                 menuActive();
               }}
               className="rounded-md hover:bg-red-300"
-              rel="stylesheet"
-              to={`/video/${categorias.name}`}
+              to={`/video/${categoria.name}`}
             >
-              {categorias.name}
+              {categoria.name}
             </Link>
           );
         })}

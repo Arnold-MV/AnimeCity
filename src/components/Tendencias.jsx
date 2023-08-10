@@ -61,15 +61,15 @@ const Tendencias = () => {
   ];
 
   return (
-    <div className="w-full flex gap-3 snap-x overflow-x-auto -mb-16 lg:-mb-0 lg:mt-2">
+    <div className="flex w-full gap-3 -mb-16 overflow-x-auto snap-x lg:-mb-0 lg:mt-2">
       {videos.map((video) => (
         <button
           key={video.id}
           onClick={() => handleBotonClick(video)}
-          className="w-32 h-20  shrink-0 snap-center md:w-32 lg:w-36"
+          className="w-32 h-20 shrink-0 snap-center md:w-32 lg:w-36"
         >
           <img
-            className="rounded-xl shadow-lg h-full w-full"
+            className="w-full h-full shadow-lg rounded-xl"
             src={video.image}
             alt=""
           />
@@ -77,11 +77,11 @@ const Tendencias = () => {
       ))}
 
       {videoVisible && selectedVideo && (
-        <div className="absolute inset-0 flex items-center justify-center w-full p-1 md:p-4 lg:p-5 z-50">
-          <div className="relative video-player-container flex items-center w-full h-72 md:h-2/4 lg:h-full">
+        <div className="z-[100] fixed inset-0 z-50 flex items-center justify-center w-full p-1 md:p-4 lg:p-5">
+          <div className="relative flex items-center w-full video-player-container h-72 md:h-2/4 xl:h-full">
             <ReactPlayer url={selectedVideo.url} width="100%" height="100%" />
             <button
-              className="absolute top-2 right-2 bg-red-500 p-2 rounded-full"
+              className="absolute p-2 bg-red-500 rounded-full top-2 right-2"
               onClick={handleClose}
             >
               <RiCloseFill />
@@ -136,23 +136,23 @@ export default Tendencias;
 //   };
 
 //   return (
-//     <div className="w-full flex gap-3 snap-x overflow-x-auto -mb-16">
+//     <div className="flex w-full gap-3 -mb-16 overflow-x-auto snap-x">
 //       {videos.map((video) => (
 //         <button
 //           key={video.id}
 //           onClick={() => handleBotonClick(video)}
-//           className="w-28 h-20 shrink-0 snap-center"
+//           className="h-20 w-28 shrink-0 snap-center"
 //         >
-//           <img className="rounded-xl shadow-lg" src={video.image} alt="" />
+//           <img className="shadow-lg rounded-xl" src={video.image} alt="" />
 //         </button>
 //       ))}
 
 //       {videoVisible && selectedVideo && (
-//         <div className="absolute inset-0 flex items-center justify-center w-full p-1 md:p-4 lg:p-5 z-50">
-//           <div className="relative video-player-container flex items-center w-full h-72 md:h-2/4 lg:h-full">
+//         <div className="absolute inset-0 z-50 flex items-center justify-center w-full p-1 md:p-4 lg:p-5">
+//           <div className="relative flex items-center w-full video-player-container h-72 md:h-2/4 lg:h-full">
 //             <ReactPlayer url={selectedVideo.url} width="100%" height="100%" />
 //             <button
-//               className="absolute top-2 right-2 bg-red-500 p-2 rounded-full"
+//               className="absolute p-2 bg-red-500 rounded-full top-2 right-2"
 //               onClick={handleClose}
 //             >
 //               <RiCloseFill />
@@ -199,30 +199,30 @@ export default Tendencias;
 //   };
 
 //   return (
-//     <div className=" w-full flex gap-3 snap-x overflow-x-auto -mb-16">
+//     <div className="flex w-full gap-3 -mb-16 overflow-x-auto snap-x">
 //       {videos.map((video, index) => {
 //         <button
 //           onClick={handleBotonClick}
-//           className="w-28 h-20 shrink-0  snap-center"
+//           className="h-20 w-28 shrink-0 snap-center"
 //         >
 //           <img
 //             key={index}
-//             className="rounded-xl shadow-lg"
+//             className="shadow-lg rounded-xl"
 //             src={video.image}
 //             alt=""
 //           />
 //         </button>;
 //         {
 //           videoVisible && (
-//             <div className=" absolute inset-0 flex items-center justify-center w-full p-1 md:p-4 lg:p-5 z-50">
-//               <div className=" relative video-player-container flex items-center w-full h-72 md:h-2/4 lg:h-full ">
+//             <div className="absolute inset-0 z-50 flex items-center justify-center w-full p-1 md:p-4 lg:p-5">
+//               <div className="relative flex items-center w-full video-player-container h-72 md:h-2/4 lg:h-full">
 //                 <ReactPlayer
 //                   url="https://www.youtube.com/embed/zHVCjEUUNOE"
 //                   width="100%"
 //                   height="100%"
 //                 />
 //                 <button
-//                   className="absolute top-2 right-2 bg-red-500 p-2 rounded-full"
+//                   className="absolute p-2 bg-red-500 rounded-full top-2 right-2"
 //                   onClick={handleClose}
 //                 >
 //                   <RiCloseFill />
@@ -233,19 +233,19 @@ export default Tendencias;
 //         }
 //       })}
 
-//       {/* <button className="w-28 h-20 shrink-0  snap-center ">
-//         <img className="rounded-xl shadow-lg" src={video.image} alt="" />
+//       {/* <button className="h-20 w-28 shrink-0 snap-center ">
+//         <img className="shadow-lg rounded-xl" src={video.image} alt="" />
 //       </button>
-//       <button className="w-28 h-20 shrink-0  snap-center">
+//       <button className="h-20 w-28 shrink-0 snap-center">
 //         <img
-//           className="rounded-xl shadow-lg"
+//           className="shadow-lg rounded-xl"
 //           src="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/07/mejores-animes-temporada-primavera-2022.jpg"
 //           alt=""
 //         />
 //       </button>
-//       <button className="w-28 h-20 shrink-0  snap-center">
+//       <button className="h-20 w-28 shrink-0 snap-center">
 //         <img
-//           className="rounded-xl shadow-lg"
+//           className="shadow-lg rounded-xl"
 //           src="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/07/mejores-animes-temporada-primavera-2022.jpg"
 //           alt=""
 //         />

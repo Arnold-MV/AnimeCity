@@ -16,14 +16,14 @@ const BotonReproducir = () => {
     <div className="2xl:mt-7">
       <button
         onClick={handleBotonClick}
-        className=" transition-all flex items-center font-semibold bg-red-600 px-2 py-1 rounded-2xl mt-1 md:mt-3 2xl:text-3xl "
+        className="flex items-center px-2 py-1 mt-1 font-semibold transition-all bg-red-600 rounded-2xl md:mt-3 2xl:text-3xl"
       >
-        <RiPlayFill className="text-lg -ml-1 2xl:text-2xl 2xl:-ml-2" />
+        <RiPlayFill className="-ml-1 text-lg 2xl:text-2xl 2xl:-ml-2" />
         Reproducir
       </button>
       {videoVisible && (
-        <div className=" transition-all absolute inset-0 flex items-center justify-center w-full p-1 md:p-4 lg:p-5 z-50">
-          <div className=" transition-all relative video-player-container flex items-center w-full h-72 md:h-2/4 lg:h-full ">
+        <div className="z-[100] fixed inset-0 z-50 flex items-center justify-center w-full p-1 md:p-4 lg:p-5">
+          <div className="relative flex items-center w-full transition-all video-player-container h-72 md:h-2/4 xl:h-full">
             <ReactPlayer
               className="transition-all"
               url="https://www.youtube.com/embed/zHVCjEUUNOE"
@@ -31,7 +31,7 @@ const BotonReproducir = () => {
               height="100%"
             />
             <button
-              className=" transition-all absolute top-2 right-2 bg-red-500 p-2 rounded-full"
+              className="absolute p-2 transition-all bg-red-500 rounded-full top-2 right-2"
               onClick={handleClose}
             >
               <RiCloseFill />
