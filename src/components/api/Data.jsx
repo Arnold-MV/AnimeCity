@@ -67,9 +67,9 @@ const data = {
     },
     {
       categoria: "series",
-      name: "Shadowverse",
-      url: "https://www.youtube.com/embed/RDCqWJfPSOY",
-      image: "http://misiontokyo.com/wp-content/uploads/2021/07/Shapp.jpg",
+      name: "Baki Hanma 2ªT",
+      url: "https://www.youtube.com/embed/w3z0uivU_AI",
+      image: "https://d9u7mg5dz9s9d.cloudfront.net/556173/uploads/378c0770-5d0b-11ec-81a7-0da9f955cc93_800_420.jpeg",
     },
     {
       categoria: "peliculas",
